@@ -1,0 +1,1028 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Level1Id'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'RecordType'
+annotate view ZC_TGRC_LOCATION with
+{
+  @UI.facet: [ 
+  {
+       purpose : #STANDARD,
+       type: #COLLECTION,
+       position: 10,
+       id: 'parentsuper',
+       label: 'Location Information'
+        },
+  {
+       purpose : #STANDARD,
+       type: #COLLECTION,
+       position: 10,
+       id: 'super1',
+       parentId: 'parentsuper',
+       label: 'General Information'
+        },
+          {
+       purpose : #STANDARD,
+       type: #COLLECTION,
+       position: 20,
+       id: 'super2',
+       parentId: 'parentsuper',
+       label: 'Hierarchy Map'
+        },
+                  {
+       purpose : #STANDARD,
+       type: #COLLECTION,
+       position: 30,
+       id: 'super3',
+       parentId: 'parentsuper',
+       label: 'Hierarchy Node Address'
+        },
+                  {
+       purpose : #STANDARD,
+       type: #COLLECTION,
+       position: 40,
+       id: 'super4',
+       parentId: 'parentsuper',
+       label: 'Contact'
+        },
+                  {
+       purpose : #STANDARD,
+       type: #COLLECTION,
+       position: 50,
+       id: 'super5',
+       parentId: 'parentsuper',
+       label: 'System Information'
+        },
+        { 
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD,
+    position: 20 , 
+    type: #IDENTIFICATION_REFERENCE, 
+    parentId: 'super1',
+    isPartOfPreview: true
+  },
+  { 
+      purpose: #STANDARD,
+      type: #FIELDGROUP_REFERENCE,
+      label: 'Hierarchy Map',
+      position: 30,
+      parentId: 'super2',
+      targetQualifier: 'map',
+       isPartOfPreview: false},
+      { 
+      purpose: #STANDARD,
+      type: #FIELDGROUP_REFERENCE,
+      label: 'Hierarchy Node Address',
+      position: 40,
+      parentId: 'super3',
+      targetQualifier: 'address',
+       isPartOfPreview: false },
+          { 
+      purpose: #STANDARD,
+      type: #FIELDGROUP_REFERENCE,
+      label: 'Contacts',
+      position: 50,
+      parentId: 'super4',
+      targetQualifier: 'contact',
+       isPartOfPreview: true },
+      { 
+      purpose: #STANDARD,
+      type: #FIELDGROUP_REFERENCE,
+      label: 'System Information',
+      position: 60,
+      parentId: 'super5',
+      targetQualifier: 'info',
+       isPartOfPreview: true },
+  {
+    label: 'Asset', 
+    purpose: #STANDARD, 
+    position: 70 , 
+    type: #LINEITEM_REFERENCE, 
+    targetElement: '_Asset'
+  },
+  {
+    label: 'Claims', 
+    purpose: #STANDARD, 
+    position: 80 , 
+    type: #LINEITEM_REFERENCE, 
+    targetElement: '_Claim'
+  },
+  {
+    label: 'Property', 
+    purpose: #STANDARD, 
+    position: 90 , 
+    type: #LINEITEM_REFERENCE, 
+    targetElement: '_Property'
+  },
+  {
+    label: 'Policy', 
+    purpose: #STANDARD, 
+    position: 100 , 
+    type: #LINEITEM_REFERENCE, 
+    targetElement: '_Policy'
+  } ]
+
+  
+  @EndUserText.label: 'Location'
+  @UI.identification: [ {
+    position: 20 
+  } ]
+  @UI.lineItem: [ {
+    position: 20 
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  Level1Id;
+  
+  @EndUserText.label: 'Address Line 1'
+  @UI.fieldGroup: [{  qualifier: 'address',
+    position: 30 , 
+    label: 'Address Line 1'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'Address Line 1'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  AddressLine1;
+  
+  @EndUserText.label: 'Address Line 2'
+  @UI.fieldGroup: [{ qualifier: 'address',
+    position: 40 , 
+    label: 'Address Line 2'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'Address Line 2'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  AddressLine2;
+  
+  @EndUserText.label: 'Allow Agreed Value Input'
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'AllowAgreedValueInput'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , 
+    label: 'AllowAgreedValueInput'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  AllowAgreedValueInput;
+  
+  @EndUserText.label: 'Bim'
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Bim'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 , 
+    label: 'Bim'
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  Bim;
+  
+  @EndUserText.label: 'Bim Date'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'BimDate'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'BimDate'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  BimDate;
+  
+  @EndUserText.label: 'Brand'
+//  @UI.identification: [ { position: 80 , hidden: #(testField) } ]
+   @UI.fieldGroup: [{  qualifier: 'map', position: 80, label: 'Brand'  } ]
+  @UI.lineItem: [ {
+    position: 80 
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  Brand;
+  
+  @EndUserText.label: 'Business Area'
+  @UI.identification: [ {
+    position: 90 
+  } ]
+  @UI.lineItem: [ {
+    position: 90 
+  } ]
+  BusinessArea;
+  
+  @EndUserText.label: 'Busniess Segment'
+  @UI.identification: [ {
+    position: 100 
+  } ]
+  @UI.lineItem: [ {
+    position: 100 
+  } ]
+  Level2Id;
+  
+  @EndUserText.label: 'Business Unit'
+  @UI.identification: [ {
+    position: 110 
+  } ]
+  @UI.lineItem: [ {
+    position: 110 
+  } ]
+  Level4Id;
+  
+//Commented below as per the defect#242
+//  @EndUserText.label: 'Busniess Unit Onl And Others'
+//  @UI.identification: [ {
+//    position: 120 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 120 
+//  } ]
+//  BusinessUnitOnlAndOthers;
+  
+//  @EndUserText.label: 'Cell Phone Number'
+//    @UI.fieldGroup: [{ qualifier: 'contact',
+//    position: 130 , 
+//    label: 'CellPhoneNumber'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 130 , 
+//    label: 'CellPhoneNumber'
+//  } ]
+//  CellPhoneNumber;
+  
+//  @EndUserText.label: 'Chief Financial Officer'
+//  @UI.identification: [ {
+//    position: 140 , 
+//    label: 'Chief Financial Officer'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 140 , 
+//    label: 'Chief Financial Officer'
+//  } ]
+//  ChiefFinancialOfficer;
+  
+  @EndUserText.label: 'Contact Name'
+   @UI.fieldGroup: [{ qualifier: 'contact',
+    position: 150 ,  
+    label: 'Contact Name'
+  } ]
+  @UI.lineItem: [ {
+    position: 150 , 
+    label: 'Contact Name'
+  } ]
+  ChiefFinancialOfficerName;
+
+//  @EndUserText.label: 'Chief Operating Officer'
+//  @UI.identification: [ {
+//    position: 160 , 
+//    label: 'Chief Operating Officer'C
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 160 , 
+//    label: 'Chief Operating Officer'
+//  } ]
+//  ChiefOperatingOfficer;
+//  
+//  @EndUserText.label: 'Chief Operating Officer Name'
+//  @UI.identification: [ {
+//    position: 170 , 
+//    label: 'Chief Operating Officer Name'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 170 , 
+//    label: 'Chief Operating Officer Name'
+//  } ]
+//  ChiefOperatingOfficerName;
+//  
+  @EndUserText.label: 'City'
+  @UI.fieldGroup: [{  qualifier: 'address',
+    position: 180 , 
+    label: 'City'
+  } ]
+  @UI.lineItem: [ {
+    position: 180 , 
+    label: 'City'
+  } ]
+  City;
+  
+  @EndUserText.label: 'Company'
+  @UI.identification: [ {
+    position: 190 
+  } ]
+  @UI.lineItem: [ {
+    position: 190 
+  } ]
+  Level5Id;
+  
+  @EndUserText.label: 'Country Onl'
+  @UI.identification: [ {
+    position: 200 
+  } ]
+  @UI.lineItem: [ {
+    position: 200 
+  } ]
+  CountryOnl;
+  
+  @EndUserText.label: 'Country'
+  @UI.fieldGroup: [{ qualifier: 'address',
+    position: 210, 
+    label: 'Country'
+  } ]
+  @UI.lineItem: [ {
+    position: 210 
+  } ]
+  Country;
+  
+  @EndUserText.label: 'Currency'
+  @UI.identification: [ {
+    position: 220 
+  } ]
+  @UI.lineItem: [ {
+    position: 220 
+  } ]
+  Currency;
+  
+  @EndUserText.label: 'Date Active'
+  @UI.identification: [ {
+    position: 230 , 
+    label: 'Date Active'
+  } ]
+  @UI.lineItem: [ {
+    position: 230 , 
+    label: 'Date Active'
+  } ]
+  DateActive;
+  
+  @EndUserText.label: 'Date Inactive'
+  @UI.identification: [ {
+    position: 240 , 
+    label: 'Date Inactive'
+  } ]
+  @UI.lineItem: [ {
+    position: 240 , 
+    label: 'Date Inactive'
+  } ]
+  DateInactive;
+  
+  @EndUserText.label: 'Contact Email'
+    @UI.fieldGroup: [{ qualifier: 'contact',
+    position: 250 , 
+    label: 'Contact Email'
+  } ]
+  @UI.lineItem: [ {
+    position: 250 , 
+    label: 'Contact Email'
+  } ]
+  CfoEmail;
+  
+//   @EndUserText.label: 'COO Email'
+//    @UI.fieldGroup: [{ qualifier: 'contact',
+//    position: 260 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 260 
+//  } ]
+//  CooEmail;
+  
+//   @EndUserText.label: 'HSE Email'
+//    @UI.fieldGroup: [{ qualifier: 'contact',
+//    position: 270 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 270 
+//  } ]
+//  HseEmail;
+  
+//   @EndUserText.label: 'Maintance Man Email'
+//   @UI.fieldGroup: [{ qualifier: 'contact',
+//    position: 280 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 280 
+//  } ]
+//  MaintanceManEmail;
+  
+//  @EndUserText.label: 'Managing Director Email'
+//  @UI.fieldGroup: [{ qualifier: 'address',
+//    position: 290 , 
+//    label: 'Managing Director Email'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 290 , 
+//    label: 'Managing Director Email'
+//  } ]
+//  ManagingDirectorEmail;
+  
+//   @EndUserText.label: 'LCH Email'
+//  @UI.fieldGroup: [{ qualifier: 'address',
+//    position: 300 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 300 
+//  } ]
+//  LchEmail;
+  
+//  @EndUserText.label: 'LCH2 Email'
+//    @UI.fieldGroup: [{ qualifier: 'contact',
+//    position: 310 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 310 
+//  } ]
+//  Lch2Email;
+  
+  @EndUserText.label: 'Entity Status'
+  @UI.identification: [ {
+    position: 320 
+  } ]
+  @UI.lineItem: [ {
+    position: 320 
+  } ]
+  LocationStatus;
+  
+  @EndUserText.label: 'Contact Fax Number'
+    @UI.fieldGroup: [{ qualifier: 'contact',
+    position: 330 , 
+    label: 'Contact Fax Number'
+  } ]
+  @UI.lineItem: [ {
+    position: 330 , 
+    label: 'Contact Fax Number'
+  } ]
+  FaxNumber;
+  
+  @EndUserText.label: 'Former Entity Name'
+  @UI.identification: [ {
+    position: 340 , 
+    label: 'Former Entity Name', isPartOfPreview: false
+  } ]
+  @UI.lineItem: [ {
+    position: 340 , 
+    label: 'Former Entity Name'
+  } ]
+  Former;
+  
+  @EndUserText.label: 'Grm Claim Use Only'
+  @UI.identification: [ {
+    position: 350 , 
+    label: 'Grm Claim Use Only'
+  } ]
+  @UI.lineItem: [ {
+    position: 350 , 
+    label: 'Grm Claim Use Only'
+  } ]
+  GrmClaimUseOnly;
+  
+  @EndUserText.label: 'Hermes Code'
+  @UI.identification: [ {
+    position: 360 , 
+    label: 'Hermes Code'
+  } ]
+  @UI.lineItem: [ {
+    position: 360 , 
+    label: 'Hermes Code'
+  } ]
+  HermesCode;
+  
+  @EndUserText.label: 'HFM Code'
+  @UI.identification: [ {  position: 371, 
+    label: 'HFM Code'   } ]
+// @UI.fieldGroup: [{ qualifier: 'address',
+//    position: 370 , 
+//    label: 'HFM Code'
+//  } ]
+  @UI.lineItem: [ {
+    position: 370 , 
+    label: 'HFM Code'
+  } ]
+  HqfmCode;
+  
+//  @EndUserText.label: 'HSE Manger'
+//   @UI.fieldGroup: [{ qualifier: 'contact',
+//    position: 380 , 
+//    label: 'HSE Manger'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 380 , 
+//    label: 'HSE Manger'
+//  } ]
+//  HseManger;
+  
+//  @EndUserText.label: 'HSE MangerName'
+//    @UI.fieldGroup: [{ qualifier: 'contact',
+//    position: 390 , 
+//    label: 'HseMangerName'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 390 , 
+//    label: 'HseMangerName'
+//  } ]
+//  HseMangerName;
+  
+  @EndUserText.label: 'Include In Renewal Collection'
+  @UI.identification: [ {
+    position: 400 , 
+    label: 'IncludeInRenewalCollection'
+  } ]
+  @UI.lineItem: [ {
+    position: 400 , 
+    label: 'IncludeInRenewalCollection'
+  } ]
+  IncludeInRenewalCollection;
+  
+  @EndUserText.label: 'Latitude'
+  @UI.fieldGroup: [{ qualifier: 'address',
+    position: 410 , 
+    label: 'Latitude'
+  } ]
+  @UI.lineItem: [ {
+    position: 410 , 
+    label: 'Latitude'
+  } ]
+  Latitude;
+  
+//  @EndUserText.label: 'Lead Claims Handler'
+//  @UI.fieldGroup: [{ qualifier: 'contact',
+//    position: 420 , 
+//    label: 'Lead Claims Handler'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 420 , 
+//    label: 'Lead Claims Handler'
+//  } ]
+//  LeadClaimsHandler;
+  
+//  @EndUserText.label: 'Lead Claims Handler2'
+//  @UI.fieldGroup: [{ qualifier: 'contact',
+//    position: 430 , 
+//    label: 'Lead Claims Handler2'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 430 , 
+//    label: 'Lead Claims Handler 2'
+//  } ]
+//  LeadClaimsHandler2;
+  
+//  @EndUserText.label: 'Lead Claims Handler2 Name'
+//  @UI.fieldGroup: [{ qualifier: 'address',
+//    position: 440 , 
+//    label: 'Lead Claims Handler2 Name'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 440 , 
+//    label: 'Lead Claims Handler2 Name'
+//  } ]
+//  LeadClaimsHandler2Name;
+  
+//  @EndUserText.label: 'Lead Claims Handler Name'
+//  @UI.fieldGroup: [{ qualifier: 'address',
+//    position: 450 , 
+//    label: 'Lead Claims Handler Name'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 450 , 
+//    label: 'Lead Claims Handler Name'
+//  } ]
+//  LeadClaimsHandlerName;
+  
+  @EndUserText.label: 'Legal Classification'
+  @UI.identification: [ {
+    position: 460 , isPartOfPreview: false
+  } ]
+  @UI.lineItem: [ {
+    position: 460 
+  } ]
+
+  LegalClassification;
+  
+  @EndUserText.label: 'Legal Entity Name'
+  @UI.identification: [ {
+    position: 470 , 
+    label: 'Legal Entity Name', isPartOfPreview: false
+  } ]
+  @UI.lineItem: [ {
+    position: 470 , 
+    label: 'Legal Entity Name'
+  } ]
+  LegalEntityName;
+  
+  @EndUserText.label: 'Local Terminal Name'
+  @UI.identification: [ {
+    position: 480 , 
+    label: 'Local Terminal Name', isPartOfPreview: false
+  } ]
+  @UI.lineItem: [ {
+    position: 480 , 
+    label: 'Local Terminal Name'
+  } ]
+  LocalTerminalName;
+  
+  @EndUserText.label: 'Node Code'
+  @UI.identification: [ {
+    position: 490 , 
+    label: 'Node Code'
+  } ]
+  @UI.lineItem: [ {
+    position: 490 , 
+    label: 'Node Code'
+  } ]
+  NodeCode;
+  
+  @EndUserText.label: 'Longitude'
+  @UI.fieldGroup: [{ qualifier: 'address',
+    position: 500 , 
+    label: 'Longitude'
+  } ]
+  @UI.lineItem: [ {
+    position: 500 , 
+    label: 'Longitude'
+  } ]
+  Longitude;
+  
+//  @EndUserText.label: 'MaintenanceManager'
+//    @UI.fieldGroup: [{ qualifier: 'contact',
+//    position: 510 , 
+//    label: 'MaintenanceManager'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 510 , 
+//    label: 'MaintenanceManager'
+//  } ]
+//  MaintenanceManager;
+  
+//  @EndUserText.label: 'MaintenanceManagerName'
+//   @UI.fieldGroup: [{ qualifier: 'contact',
+//    position: 520 , 
+//    label: 'MaintenanceManagerName'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 520 , 
+//    label: 'MaintenanceManagerName'
+//  } ]
+//  MaintenanceManagerName;
+  
+//  @EndUserText.label: 'ManagingDirector'
+//  @UI.fieldGroup: [{ qualifier: 'contact',
+//    position: 530 , 
+//    label: 'ManagingDirector'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 530 , 
+//    label: 'ManagingDirector'
+//  } ]
+//  ManagingDirector;
+  
+//  @EndUserText.label: 'ManagingDirectorName'
+//    @UI.fieldGroup: [{ qualifier: 'contact',
+//    position: 540 , 
+//    label: 'ManagingDirectorName'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 540 , 
+//    label: 'ManagingDirectorName'
+//  } ]
+//  ManagingDirectorName;
+  
+  @EndUserText.label: 'Node Description'
+  @UI.identification: [ {
+    position: 550 , 
+    label: 'Node Description'
+  } ]
+  @UI.lineItem: [ {
+    position: 550 , 
+    label: 'Node Description'
+  } ]
+  NodeDesc;
+  
+  @EndUserText.label: 'Node Key'
+  @UI.identification: [ {
+    position: 560 , 
+    label: 'Node Key'
+  } ]
+  @UI.lineItem: [ {
+    position: 560 , 
+    label: 'Node Key'
+  } ]
+  NodeKey;
+  
+  @EndUserText.label: 'Node Level'
+  @UI.identification: [ {
+    position: 570 , 
+    label: 'Node Level'
+  } ]
+  @UI.lineItem: [ {
+    position: 570 , 
+    label: 'Node Level'
+  } ]
+  NodeLevel;
+  
+  @EndUserText.label: 'Notes'
+  @UI.identification: [ {
+    position: 580 , 
+    label: 'Notes',isPartOfPreview: false
+  } ]
+  @UI.lineItem: [ {
+    position: 580 , 
+    label: 'Notes'
+  } ]
+  Notes;
+  
+  @EndUserText.label: 'Office'
+  @UI.identification: [ {
+    position: 590 , 
+    label: 'Office'
+  } ]
+  @UI.lineItem: [ {
+    position: 590 , 
+    label: 'Office'
+  } ]
+  Office;
+  
+  @EndUserText.label: 'Organisation1'
+  @UI.fieldGroup: [{ 
+    qualifier: 'map',
+    position: 600,
+    label: 'Organisation' 
+  } ]
+  @UI.lineItem: [ {
+    position: 600 
+  } ]
+  Organisation1;
+  
+  @EndUserText.label: 'Ownership %'
+  @UI.identification: [ {
+    position: 610 , 
+    label: 'Ownership %', isPartOfPreview: false
+  } ]
+  @UI.lineItem: [ {
+    position: 610 , 
+    label: 'Ownership %'
+  } ]
+  Ownership;
+  
+  @EndUserText.label: 'Parent Code'
+  @UI.identification: [ {
+    position: 620 , 
+    label: 'Parent Code'
+  } ]
+  @UI.lineItem: [ {
+    position: 620 , 
+    label: 'Parent Code'
+  } ]
+  ParentCode;
+   
+  @EndUserText.label: 'Parent Desc'
+  @UI.identification: [ {
+    position: 630 , 
+    label: 'Parent Desc'
+  } ]
+  @UI.lineItem: [ {
+    position: 630 , 
+    label: 'Parent Desc'
+  } ]
+  ParentDesc;
+  
+    @EndUserText.label: 'Parent Node'
+  @UI.identification: [ {
+    position: 640 
+  } ]
+  @UI.lineItem: [ {
+    position: 640 
+  } ]
+  ParentNode;
+  
+  @EndUserText.label: 'Parent Level'
+  @UI.identification: [ {
+    position: 650 , 
+    label: 'Parent Level'
+  } ]
+  @UI.lineItem: [ {
+    position: 650 , 
+    label: 'Parent Level'
+  } ]
+  ParentLevel;
+  
+
+  
+  @EndUserText.label: 'Contact Phone Number'
+   @UI.fieldGroup: [{ qualifier: 'contact',
+    position: 660 , 
+    label: 'Contact Phone Number'
+  } ]
+  @UI.lineItem: [ {
+    position: 660 , 
+    label: 'Contact Phone Number'
+  } ]
+  PhoneNumber;
+  
+  @EndUserText.label: 'Port Authority'
+  @UI.identification: [ {
+    position: 670 , 
+    label: 'PortAuthority'
+  } ]
+  @UI.lineItem: [ {
+    position: 670 , 
+    label: 'PortAuthority'
+  } ]
+  PortAuthority;
+  
+  @EndUserText.label: 'Postal Code'
+  @UI.fieldGroup: [{ qualifier: 'address',
+    position: 680 , 
+    label: 'Postal Code'
+  } ]
+  @UI.lineItem: [ {
+    position: 680 , 
+    label: 'Postal Code'
+  } ]
+  PostalCode;
+  
+  @EndUserText.label: 'Primary Contact'
+  @UI.fieldGroup: [{ qualifier: 'address',
+    position: 690 , 
+    label: 'Primary Contact'
+  } ]
+  @UI.lineItem: [ {
+    position: 690 , 
+    label: 'Primary Contact'
+  } ]
+  PrimaryContact;
+  
+  @EndUserText.label: 'Record Type'
+  @UI.identification: [ {
+    position: 695 
+  } ]
+  @UI.lineItem: [ {
+    position: 695 
+  } ]
+  RecordType;
+  
+  @EndUserText.label: 'Region'
+  @UI.fieldGroup: [{  qualifier: 'map',
+    position: 700,
+    label: 'Region' 
+  } ]
+  @UI.lineItem: [ {
+    position: 700 
+  } ]
+
+  Region;
+  
+  @EndUserText.label: 'Renewal Contact'
+  @UI.identification: [ {
+    position: 710 
+  } ]
+  @UI.lineItem: [ {
+    position: 710 
+  } ]
+  RenewalContact;
+  
+  @EndUserText.label: 'States'
+  @UI.identification: [ {
+    position: 720 
+  } ]
+  @UI.lineItem: [ {
+    position: 720 
+  } ]
+
+  States;
+  
+  @EndUserText.label: 'State Onl'
+  @UI.identification: [ {
+    position: 730 , 
+    label: 'StateOnl'
+  } ]
+  @UI.lineItem: [ {
+    position: 730 , 
+    label: 'StateOnl'
+  } ]
+  StateOnl;
+  
+  @EndUserText.label: 'Sub Brand'
+  @UI.fieldGroup: [{  qualifier: 'map',
+    position: 740,
+    label: 'Sub Brand' 
+  } ]
+  @UI.lineItem: [ {
+    position: 740 
+  } ]
+  SubBrand;
+  
+  @EndUserText.label: 'Sub Business Unit'
+  @UI.identification: [ {
+    position: 750 
+  } ]
+  @UI.lineItem: [ {
+    position: 750 
+  } ]
+  Level3Id;
+  
+  @EndUserText.label: 'TerminalNameLocal'
+  @UI.identification: [ {
+    position: 760 , 
+    label: 'TerminalNameLocal'
+  } ]
+  @UI.lineItem: [ {
+    position: 760 , 
+    label: 'TerminalNameLocal'
+  } ]
+  TerminalNameLocal;
+  
+  @EndUserText.label: 'VendorPortalTerminal'
+  @UI.identification: [ {
+    position: 770 , 
+    label: 'VendorPortalTerminal'
+  } ]
+  @UI.lineItem: [ {
+    position: 770 , 
+    label: 'VendorPortalTerminal'
+  } ]
+  VendorPortalTerminal;
+  
+  @EndUserText.label: 'Warehouse'
+  @UI.identification: [ {
+    position: 780 , 
+    label: 'Warehouse'
+  } ]
+  @UI.lineItem: [ {
+    position: 780 , 
+    label: 'Warehouse'
+  } ]
+  Warehouse;
+  
+    @EndUserText.label: 'Owner'
+  @UI.fieldGroup: [{ qualifier: 'info',
+    position: 790 
+  } ]
+  @UI.lineItem: [ {
+    position: 790 
+  } ]
+  Owner;
+  
+  @EndUserText.label: 'Created By'
+  @UI.fieldGroup: [{ qualifier: 'info',
+    position: 800 
+  } ]
+  @UI.lineItem: [ {
+    position: 800 
+  } ]
+  Createdby;
+  
+  
+  @EndUserText.label: 'Created On'
+ @UI.fieldGroup: [{ qualifier: 'info',
+    position: 810 
+  } ]
+  @UI.lineItem: [ {
+    position:  810
+  } ]
+  Createdat;
+  
+  @EndUserText.label: 'Last Changed By'
+  @UI.fieldGroup: [{ qualifier: 'info',
+    position: 820 
+  } ]
+  @UI.lineItem: [ {
+    position: 820 
+  } ]
+  Lastchangedby;
+  
+  @EndUserText.label: 'Last Changed On'
+ @UI.fieldGroup: [{ qualifier: 'info',
+    position: 830 
+  } ]
+  @UI.lineItem: [ {
+    position: 830 
+  } ]
+  Lastchangedat;
+  
+  @EndUserText.label: 'Location Uid'
+  @UI.fieldGroup: [{ qualifier: 'info',  
+//  @UI.identification: [ {
+    position: 840 , 
+    label: 'Location Uid'
+  } ]
+  @UI.lineItem: [ {
+    position: 840 , 
+    label: 'Location Uid'
+  } ]
+  @UI.selectionField: [ {
+    position: 840 
+  } ]
+  LocationUuid;
+}

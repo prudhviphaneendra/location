@@ -1,0 +1,11 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SAP Object Node Type ZTGRC_LOC_MIG",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "name": "ZTGRC_LOC_MIG",
+  "sapObjectType": "ZTGRC_LOC_MIG",
+  "rootNode": true
+}

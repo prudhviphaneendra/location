@@ -1,0 +1,87 @@
+@AccessControl.authorizationCheck: #CHECK
+@Metadata.allowExtensions: true
+@EndUserText.label: '###GENERATED Core Data Service Entity'
+// @ObjectModel.sapObjectNodeType.name: 'ZTGRC_loc_migr'
+define view entity ZR_TGRC_prop_migr
+as select from ztgrc_prop_migr
+association to parent ZR_TGRC_FILE_PROP as _XLUser on $projection.FileId = _XLUser.FileId
+{
+key ztgrc_prop_migr.file_id as FileId,
+key ztgrc_prop_migr.linenum as Linenum ,
+key ztgrc_prop_migr.property_no as PropertyNo,
+ztgrc_prop_migr.property_id as PropertyId ,
+ztgrc_prop_migr.property_name as PropertyName ,
+ztgrc_prop_migr.property_status as PropertyStatus ,
+ztgrc_prop_migr.property_type as PropertyType ,
+ztgrc_prop_migr.record_type as RecordType ,
+ztgrc_prop_migr.date_purchased as DatePurchased ,
+ztgrc_prop_migr.insured_name as InsuredName ,
+ztgrc_prop_migr.property_use as PropertyUse ,
+ztgrc_prop_migr.hfm_code as HfmCode ,
+ztgrc_prop_migr.ownership as Ownership ,
+ztgrc_prop_migr.date_sold as DateSold ,
+ztgrc_prop_migr.occupancy as Occupancy ,
+ztgrc_prop_migr.brand as Brand ,
+ztgrc_prop_migr.sub_brand as SubBrand ,
+ztgrc_prop_migr.site_owner_email as SiteOwnerEmail ,
+ztgrc_prop_migr.building_value as BuildingValue ,
+ztgrc_prop_migr.equipment_value as EquipmentValue ,
+ztgrc_prop_migr.tenants_improvements as TenantsImprovements ,
+ztgrc_prop_migr.business_interpt_val as BusinessInterptVal ,
+ztgrc_prop_migr.avg_cargo_value as AvgCargoValue ,
+ztgrc_prop_migr.max_cargo_value as MaxCargoValue ,
+ztgrc_prop_migr.address_line1 as AddressLine1 ,
+ztgrc_prop_migr.address_line2 as AddressLine2 ,
+ztgrc_prop_migr.city as City ,
+ztgrc_prop_migr.state as State ,
+ztgrc_prop_migr.zip_code as ZipCode ,
+ztgrc_prop_migr.latitude as Latitude ,
+ztgrc_prop_migr.longitude as Longitude ,
+ztgrc_prop_migr.region as Region ,
+ztgrc_prop_migr.area as Area ,
+ztgrc_prop_migr.country as Country ,
+ztgrc_prop_migr.renewal_contact as RenewalContact ,
+ztgrc_prop_migr.square_metres as SquareMetres ,
+ztgrc_prop_migr.gross_square_metres as GrossSquareMetres ,
+ztgrc_prop_migr.solar_panels as SolarPanels ,
+ztgrc_prop_migr.building_height as BuildingHeight ,
+ztgrc_prop_migr.levels_above_grade as LevelsAboveGrade ,
+ztgrc_prop_migr.levels_below_grade as LevelsBelowGrade ,
+ztgrc_prop_migr.fire_areas as FireAreas ,
+ztgrc_prop_migr.floors_occupied as FloorsOccupied ,
+ztgrc_prop_migr.occupation as Occupation ,
+ztgrc_prop_migr.area_occupied as AreaOccupied ,
+ztgrc_prop_migr.fire_protect_class as FireProtectClass ,
+ztgrc_prop_migr.fire_dept_type as FireDeptType ,
+ztgrc_prop_migr.fire_hydrant_distance as FireHydrantDistance ,
+ztgrc_prop_migr.tapa_certification as TapaCertification ,
+ztgrc_prop_migr.fire_dept_location as FireDeptLocation ,
+ztgrc_prop_migr.proximity_fire_hyd as ProximityFireHyd ,
+ztgrc_prop_migr.sprinklers as Sprinklers ,
+ztgrc_prop_migr.property_zoning as PropertyZoning ,
+ztgrc_prop_migr.coastal_distance as CoastalDistance ,
+ztgrc_prop_migr.elevation as Elevation ,
+ztgrc_prop_migr.flood_zone as FloodZone ,
+ztgrc_prop_migr.earthquake_zone as EarthquakeZone ,
+ztgrc_prop_migr.wind_storm_zone as WindStormZone ,
+ztgrc_prop_migr.owner as Owner ,
+ztgrc_prop_migr.sic_code as SicCode ,
+ztgrc_prop_migr.skip_property_validation as SkipPropertyValidation ,
+ztgrc_prop_migr.values_collection_email as ValuesCollectionEmail ,
+ztgrc_prop_migr.total_insured_value as TotalInsuredValue ,
+ztgrc_prop_migr.construction_year as ConstructionYear ,
+ztgrc_prop_migr.insurance_obgligation as InsuranceObgligation ,
+ztgrc_prop_migr.location as Location ,
+ztgrc_prop_migr.archetype as Archetype ,
+
+@Semantics.user.createdBy: true
+ztgrc_prop_migr.createdby as Createdby,
+@Semantics.systemDateTime.createdAt: true
+ztgrc_prop_migr.createdat as Createdat,
+@Semantics.user.localInstanceLastChangedBy: true
+ztgrc_prop_migr.lastchangedby as Lastchangedby,
+@Semantics.systemDateTime.lastChangedAt: true
+ztgrc_prop_migr.lastchangedat as Lastchangedat,
+
+_XLUser
+}

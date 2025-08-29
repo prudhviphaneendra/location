@@ -1,0 +1,90 @@
+
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'User File',
+    typeNamePlural: 'User Files',
+    title: { type: #STANDARD, value: 'FileId' }
+    }
+annotate entity  ZC_TGRC_FILE_LOC with
+{
+
+ @UI.facet: [
+  { id: 'idEndUser',                purpose: #HEADER,   position: 10,
+    type: #DATAPOINT_REFERENCE,     targetQualifier: 'tqEndUser'
+  },
+  { id: 'idChgAt',                   purpose: #HEADER,   position: 20,
+    type: #DATAPOINT_REFERENCE,     targetQualifier: 'tqChgAt'
+  },
+  { id: 'idStatus',                 purpose: #HEADER,   position: 30,
+    type: #DATAPOINT_REFERENCE,     targetQualifier: 'tqStatus'
+  },
+  { 
+  id:'mainCollection',
+  type: #COLLECTION,
+  label: 'Main Section',
+  position: 10 },    
+  {
+    id: 'idFile',     
+    purpose: #STANDARD, 
+    position: 10,    
+//    label: 'File Upload',    
+//    type: #IDENTIFICATION_REFERENCE 
+    type: #FIELDGROUP_REFERENCE,
+    targetQualifier: 'tqFile',    
+    parentId: 'mainCollection'
+  },
+  {     
+    id: 'idUpload',  
+    purpose: #STANDARD,   
+    position: 20,
+//    label: 'Upload to main table', 
+//    type: #DATAPOINT_REFERENCE,
+    type: #FIELDGROUP_REFERENCE,
+    parentId: 'mainCollection',    
+    targetQualifier: 'tqUpload' 
+  },  
+  
+  {
+    id: 'idData',     purpose: #STANDARD, position: 60,
+    label: 'Excel Data',  type: #LINEITEM_REFERENCE,
+    targetElement: '_XLData'
+  } ]
+  
+  
+  @UI.lineItem: [{ position: 20, label: 'File Status' }]
+  @UI.dataPoint: { qualifier: 'tqStatus', title: 'File Status' }
+  @UI.identification: [{ type: #FOR_ACTION, label: 'Upload Data', dataAction: 'uploadExcelData' }]  
+  FileStatus;
+  
+  
+//  @UI.identification: [{ position: 30, label: 'Select Excel File to Upload' }]
+  @UI.fieldGroup: [{ qualifier: 'tqFile', position: 30, label: 'Select Excel File to Upload' }] 
+  Attachment;
+  
+  @UI.hidden: true
+  Mimetype;
+  
+  @UI.lineItem: [{ position: 40, label: 'Filename' }]
+  Filename;
+ 
+
+  @UI.dataPoint: { qualifier: 'tqUpload', title: 'Update main table' }
+//  @UI.lineItem: [{ position: 50, label: 'Update main table' }]
+  @UI.fieldGroup: [{ qualifier: 'tqUpload', position: 50, label: 'Upload to main Table' }]   
+  updateMainTable;
+  
+  @UI.hidden: true
+  LocalCreatedBy;
+  @UI.hidden: true
+  LocalCreatedAt;
+  @UI.hidden: true
+  LocalLastChangedBy;
+  @UI.dataPoint: { qualifier: 'tqChgAt', title: 'Last Changed At' }
+  @UI.lineItem: [{ position: 60, label: 'Last Used At' }]
+  LocalLastChangedAt;
+  @UI.hidden: true
+  LastChangedAt;
+  /* Associations */
+  @UI.hidden: true
+  _XLData;
+}    

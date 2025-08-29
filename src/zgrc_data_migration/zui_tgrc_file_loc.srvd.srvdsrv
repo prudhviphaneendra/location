@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition for ZC_TGRC_FILE_LOC'
+define service Zui_tgrc_file_loc {
+  expose ZC_TGRC_FILE_LOC;
+  expose ZC_TGRC_LOCATION_MIG;
+}

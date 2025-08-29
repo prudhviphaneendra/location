@@ -1,0 +1,12 @@
+@EndUserText.label: 'Location Access Control'
+@MappingRole: true
+define role ZR_TGRC_LOCATION {
+    grant 
+        select
+            on
+                ZR_TGRC_LOCATION
+                    where
+                        (RecordType) = aspect pfcg_auth (ZGRC_LOC_O, ZGRC_LOC_F, ACTVT = '03');
+                        //(Z_RECTY_AO, Z_RECTY_AF, ACTVT = '03');
+                        
+}

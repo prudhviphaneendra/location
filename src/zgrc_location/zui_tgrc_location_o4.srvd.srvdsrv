@@ -1,0 +1,17 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TGRC_LOCATION'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TGRC_LOCATION'
+  }
+}
+define service ZUI_TGRC_LOCATION_O4
+  provider contracts odata_v4_ui {
+  expose ZC_TGRC_LOCATION;
+  expose ZR_LOCATION_RECTYPE_PL;
+  expose ZR_GRC_LOCATION_CLAIM;
+  expose ZR_GRC_LOCATION_ASSET;
+  expose ZR_GRC_LOCATION_PROPERTY;
+  expose ZR_GRC_LOCATION_POLICY;
+}

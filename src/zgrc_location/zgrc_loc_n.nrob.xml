@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_NROB" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <ATTRIBUTES>
+    <OBJECT>ZGRC_LOC_N</OBJECT>
+    <DOMLEN>ZGRC_PICKLIST_CHECK</DOMLEN>
+    <PERCENTAGE>10.0</PERCENTAGE>
+    <BUFFER>S</BUFFER>
+    <NOIVBUFFER>00000001</NOIVBUFFER>
+    <NONRSWAP>X</NONRSWAP>
+   </ATTRIBUTES>
+   <TEXT>
+    <LANGU>E</LANGU>
+    <OBJECT>ZGRC_LOC_N</OBJECT>
+    <TXT>Number Range For Locations</TXT>
+    <TXTSHORT>Number Range For...</TXTSHORT>
+   </TEXT>
+  </asx:values>
+ </asx:abap>
+</abapGit>
